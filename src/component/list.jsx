@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class List extends Component {
     _getid = e => {
         var tt = e.target;
-        var getsrc = tt.getAttribute("src");//2434
+        var getsrc = tt.getAttribute("src");
         var getid = getsrc.substring(23,34);
          this.props.getid(getid)
     }
@@ -12,9 +12,9 @@ class List extends Component {
            
             <div>
                 <ul className="list_wrap">
-                    {this.props.list.map(item=>
+                    {this.props.list.map((item,index)=>
                         {
-                            return <li>
+                            return <li key={index}>
                                 <div className="thum" onClick={this._getid}>
                                     <img src={item.snippet.thumbnails.high.url}/>
                                 </div>
